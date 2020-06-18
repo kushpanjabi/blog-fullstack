@@ -1,4 +1,5 @@
 const express = require('express');
+const morgan = require('morgan');
 const app = express();
 const cors = require('cors');
 const pool = require('./db'); 
@@ -7,6 +8,7 @@ const pool = require('./db');
 //middleware
 app.use(cors());
 app.use(express.json()); // => allows us to access the req.body from client
+app.use(morgan('common'));
 
 //ROUTES//
 
